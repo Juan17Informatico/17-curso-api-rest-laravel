@@ -11,6 +11,8 @@ use App\Http\Resources\V2\PostCollection;
 
 class PostController extends Controller
 {
+    
+
     /**
      * Display a listing of the resource.
      *
@@ -18,7 +20,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        //
+        return new PostCollection(Post::latest()->paginate());
     }
 
     /**
